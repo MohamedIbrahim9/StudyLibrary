@@ -116,7 +116,35 @@
 
 // ------------ video 6 ------------ 06 - Arrow Functions Introduction
 
+// const names = ["ahmed", "ali", "sayed"];
+
+// //old way using function 
+// const fullnames = names.map(function (name) {
+//     return name + " Boss";
+// });
+
+// //using arrow function 
+// const fullnames1= names.map((name)=>{
+//     return name + " Boss";
+// });
+
+// //arrow function can be used without () if it's one parameter 
+// const fullnames2= names.map(name=>{
+//     return name + " Boss";
+// });
+
+// //arrow function with implect return 
+// const fullnames3= names.map(name =>name + " Boss");
+
+// console.log(fullnames3);
+
+// //assigning an anonymous function's location in memory to a const, so it can be invoked 
+// const SayName = (name)=>{
+//     name = name || "ali";
+//     console.log(name);
+// };
+// SayName("mahmoud");
 
 
-
+// ------------ video 7 ------------ 07 - More Arrow Function Examples
 
