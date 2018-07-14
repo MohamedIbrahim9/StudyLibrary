@@ -148,3 +148,66 @@
 
 // ------------ video 7 ------------ 07 - More Arrow Function Examples
 
+// //if we hava seprate data, and we want to construct an object of them
+// //we use map with anonymous function to return an object.
+// const race="100m Dash";
+// const winners=["ahmed","ali","sayed"];
+
+
+// //here if we want to make an implect return we use (), in es6 we can write property as key & value 
+// //as race : race, or simply we can write race it will accept it 
+// const win=winners.map((winner,i)=>({
+//  name:winner,
+//  race: race,
+//  //race:race or race is accepted in es6 syntax
+//  place:i+1
+// }));
+
+// console.table(win);
+// console.log(win);
+
+// //if we have data, and we to use filter opetation, we use filter propety with arrow function
+// //thus, if true it will be returnd to the array, if not it will be disqualified 
+
+// const ages =[120,15,12,62,43,65];
+// const filterdAges = ages.filter(age=> age>=60);
+
+// console.log(filterdAges);
+
+
+
+// ------------ video 8 ------------08 - Arrow Functions and this
+
+// //with addevent listener, if we used arrow function, (this) will inherit the window
+// //thus we must use function() so it can bind to the box element selected
+// const box =document.querySelector("#box");
+// box.addEventListener("click",function(){
+
+//     let xl="width-xl";
+//     let lg="width-lg";
+//     console.log(this);
+//     this.classList.toggle(lg) //yellow
+//     this.classList.toggle(xl) //red
+
+//     //if we want to swap two varaibles with each other we can use ES6 option 
+//     //[first, second] = [second,first]. they will be switched 
+//     if(this.classList.contains(xl)){
+//         [xl,lg]=[lg,xl];
+//         console.log(xl); //width-lg - yellow
+//         console.log(lg); //width-xl - red
+//     }
+    
+//     //in set time out if we used function() it will bind to the window becasue function
+//     //need to be binded with something such as box.addeventlistener
+//     //thus in the case we must use arrow function because it doesn't change the value 
+//     //of (this) it inherits it from the parent which in that case is the box
+//     setTimeout(()=> {
+//         console.log(this); 
+//         this.classList.toggle(xl);
+//     }, 2000);
+// });
+
+
+// ------------ video 9 ------------09 - Default Function Arguments
+
+
