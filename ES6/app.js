@@ -328,3 +328,55 @@
 
 
 // ------------ video 12 ------------12 - Template Strings Introduction
+
+// //we can use (``) which is back text, it allow us to use other varaibles with ${variable} inside string
+
+// const firtname="ahmed";
+// const lastname="sayed";
+// const fullnames=`This Person's Name is ${firtname} and its last name is ${lastname}`;
+// console.log(fullnames);
+
+
+
+
+// ------------ video 13 ------------13 - Creating HTML fragments with Template Literals
+
+// // we can use template strings to add elemnts to the documents 
+
+// const drinks = {
+//     name: 'CokaCola',
+//     County: 'Egypt',
+//     keywords: ['hot', 'soft', 'cloudy', 'spicy'],
+//     condition:'good'
+// };
+
+
+// //this function is called throw a template string, and returns a list of items
+// const renderword = (keywords) => {
+//     return `
+//         <ul>
+//             ${keywords.map(keyword=>`<li>${keyword}</li>`).join('')}
+//         </ul>
+//         `;
+// }
+
+// //this is an html markup, we can call a function , use tinary operators to make if statuments 
+// const markup = `
+//     <div class="xl">
+//         <h2>${drinks.name}</h2>
+//         <h2>${drinks.County}</h2>
+//         <h2>${drinks.condition?`${drinks.condition}`:'' }</h2>
+//         ${renderword(drinks.keywords)}
+//     </div>
+//     `;
+
+//     document.body.innerHTML=markup;
+
+
+
+
+// ------------ video 14 ------------14 - Tagged Template Literals
+
+
+
+
