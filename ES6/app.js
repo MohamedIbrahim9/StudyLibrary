@@ -377,6 +377,82 @@
 
 // ------------ video 14 ------------14 - Tagged Template Literals
 
+// // in tagged template literals, you can simply call a method with `` , by typing the method's name 
+// // highligh``, it calls a functions which sends the strings and values of ${items} in the backtext (``) 
+// //thus, the function takes input (strings,...values) > ...values converts them into an array.
+
+// const Person = {
+//     name: 'ahmed',
+//     age: 25
+// };
+
+// const sentence = highLight `Person name is : ${Person.name} and his age is : ${Person.age}`;
+
+// //this is the fucntion that we explained earlier, we use .map or .forEach method to make iterations 
+// // it will return a backtext which contains html tags 
+// function highLight(strings, ...values) {
+//     // debugger;
+//     let str = '';
+//     // we need to use values[i] || '', because the number of strings is always bigger by one than values
+//     strings.map((items, i) => {
+//         str += ` ${items} <span contenteditable>${values[i] ||''}</span> `
+//     })
+// return str;
+// }
+// document.body.innerHTML=sentence;
+// console.log(sentence);
 
 
 
+// ------------ video 15 ------------15 - Tagged Templates Exercise
+
+
+
+// //this is a dictionary we use to create hovering text of certain values 
+// const dict = {
+//     Html: 'html5',
+//     Css: 'Css 3'
+// }
+
+// const Person = {
+//     name: 'ahmed',
+//     age: 25
+// };
+
+// //here we use tagged templates, we called a fucntion with that will use the values. 
+
+// const sentence = AddAbbrivation `Person name is : ${Person.name}
+//  and his age is : ${Person.age} and i love to code ${'Html'} and ${'Css'}`;
+
+
+
+//  //in this function we looped over the values to check if there a defination in the dictionary 
+//  // else it will return the value 
+
+//  //we used reduce Method it works as let str='', it will return an backtext.
+// function AddAbbrivation(strings, ...values) {
+// // debugger;
+//     const abbrivated = values.map(value => {
+//         if (dict[value]) {
+//             return `<abbr title="${dict[value]}">${value}</abbr>`
+//         }
+//         return value;
+//     })
+    
+//     return strings.reduce((sentence, string, i) => {
+//         debugger;
+//         return `${sentence} ${string} ${abbrivated[i] ||''}`;
+//     },"")
+// };
+
+// //we add to div inside the Html 
+// const div = document.querySelector("#div");
+// const pdata = document.createElement('p');
+// pdata.innerHTML = sentence;
+
+// div.appendChild(pdata);
+
+
+
+
+// ------------ video 16 ------------16 - Santizing User Data with Tagged Templates
