@@ -178,7 +178,7 @@
 
 // ------------ video 8 ------------08 - Arrow Functions and this
 
-// //with addevent listener, if we used arrow function, (this) will inherit the window
+// //with addeventlistener, if we used arrow function, (this) will inherit the window
 // //thus we must use function() so it can bind to the box element selected
 // const box =document.querySelector("#box");
 // box.addEventListener("click",function(){
@@ -196,18 +196,135 @@
 //         console.log(xl); //width-lg - yellow
 //         console.log(lg); //width-xl - red
 //     }
-    
+
 //     //in set time out if we used function() it will bind to the window becasue function
 //     //need to be binded with something such as box.addeventlistener
 //     //thus in the case we must use arrow function because it doesn't change the value 
 //     //of (this) it inherits it from the parent which in that case is the box
 //     setTimeout(()=> {
 //         console.log(this); 
-//         this.classList.toggle(xl);
+//         this.classList.toggle(xl); //width-lg- yellow
 //     }, 2000);
 // });
 
 
 // ------------ video 9 ------------09 - Default Function Arguments
 
+// //Normmaly if you want to make default arguments , we use ||. In Es6 we can simply 
+// //thus, it's assigned when it's calling value is equal to undefined 
 
+// function calculateBill(total, tax=0.13, tip=0.15) {
+//     //tax= tax||0.13; 
+//     // if(tax===undefined){tax=0.13};
+//     return total + (total * tax) + (total * tip);
+// }
+
+// const TotalBill= calculateBill(100,undefined,0.25);
+// console.log(TotalBill);
+
+
+// ------------ video 10 ------------10 - When NOT to use an Arrow Function
+
+
+// //Case 1: when we have an element from the html we don't use arrow function, beccaue it will
+// //inherit the window. thus we use the normal function which will bind to the object 
+// const button = document.querySelector("#button");
+// button.addEventListener("click", function () {
+//     console.log(this);
+//     this.classlist.toggle("on");
+// })
+
+
+// //Case 2 : when you have an object, and you to use one of its property , we can't use this either 
+// //because it will inherit the window's object. thus we use normal function as follow 
+// //in ES6, you can write the function as follows : score(){this.points++;} == score:fucntion(){this.point++;} 
+
+// const person = {
+//     points: 23,
+//     score() {
+//         this.points++;
+//     }
+// }
+// person.score();
+// console.log(person.points);
+
+
+
+
+// //Case 3 : if you hava a class, and you want to add method to the prototype to allow object to use it 
+// //we can't use the arrow fucntion because it won't bind to the object as it inherits the window 
+// //thus, we have to use normal function.
+
+
+// class car {
+//     constructor(model,color){
+//         this.model=model;
+//         this.color=color;
+//     }
+// }
+
+
+// const bmw= new car("bmw","blue");
+// const kia= new car("kia","green");
+
+// car.prototype.summary=function(){
+//     return "this car model is : "+this.model+ "  and the color is : " + this.color;
+// }
+
+
+// //Case 4 : if we have a function and we want to access its arguments list. we can't use arrow function either
+// //we need to use the normal function.
+
+
+// const listArguments=function(){
+//     //array from convert them into an array object 
+//     const argumentslist = Array.from(arguments);
+//     return argumentslist.map((args,i)=>{
+//         return args +"was created " +(i+1) 
+//     })
+// }
+// console.log(listArguments("ahmed","ali","sayed"));
+
+
+
+// ------------ video 11 ------------11 - Arrow Functions Exercises
+
+// //Exercise 1
+// //fisrt we use querySelectAll to select all elements with data attribute [data-time];
+// const items = Array.from(document.querySelectorAll("[data-time]"));
+
+
+// //we start filterting to get only the "ReduxVideo", thus it returns an arrar of object 
+// const filtrItems = items.filter(item => item.textContent.includes("ReduxVideo"))
+//     //we need to extract the time property from dataset, we use map it returns an array of strings ["6.24","2.25"]
+//     .map(item => item.dataset.time)
+//     //we need to extract minutes and seconds from the time, so we use split method which converts into 
+//     // an array [["6","24"],["2","25"]] thus we use map to convert from string to float using parseFloat
+//     //the return her is now the parts [0]*60 + part[1]
+//     .map(timecodeTotal => {
+//         const parts = timecodeTotal.split(":")
+//             .map(part => parseFloat(part));
+//         return (parts[0] * 60) + parts[1];
+//     })
+
+//     //we use the reduce mmethod which takes two parmeters, firtst is callback function which returns the total value of array 
+//     //second arugument is number intial value to be added to the total
+
+//     //in this case the function to be sent first arguments represents the index of the array, total time is the timecodetotal
+//     //to return the total we must add them in the method together
+//     // reduce function needs to be studied more to understant how it actually works 
+//     .reduce((index, totalTime) => index + totalTime, 2000); //7410
+
+// console.log(filtrItems);
+
+// //Exercise 2 
+// //filtering an array of numbers to return all numbers which are greater than 70 , then get total
+// const numbers = [10,29,69,232,434,23];
+
+// const fileternumbers= numbers.filter(num=>num>70).reduce((index,totalsum)=> index+totalsum);
+
+// console.log(fileternumbers);
+
+
+
+// ------------ video 12 ------------12 - Template Strings Introduction
