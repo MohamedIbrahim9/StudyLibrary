@@ -604,7 +604,7 @@
 
 
 
-// ------------ video 22 ------------22 - The for of loop &  22 - The for of Loop in Action
+// ------------ video 22-23 ------------22- The for of loop &  23 - The for of Loop in Action
 
 // //the power of looping with (of) is that you iterate over array and break at a certin element
 // //and aslo you can skip an item in the array, unline forEach you can't do that 
@@ -672,7 +672,89 @@
 
 
 
-// ------------ video 22 ------------ 22 - The for of loop
+// ------------ video 24 ------------ 24 - Using for in with Objects
+
+
+// //pure object created to test loops 
+// const apple= {
+//     color:'red',
+//     size:'Medium',
+//     weight:'50',
+//     sugar:'10'
+// };
+
+
+// //iterating over object's properties, it's prefered to use (in) loops to access the key which is the index.
+// for (const key in apple) {
+//     debugger;
+//     if (apple.hasOwnProperty(key)) {
+//         const element = apple[key];
+//         console.log(element);
+//     }
+// };
+
+// //iterating over object with (of) looping we use Object.key(object) which returns an array with keys.
+// for (const iterator of Object.keys(apple)) {
+
+//     if(apple.hasOwnProperty(iterator)){
+//         const element=apple[iterator];
+//         console.log(element);
+//     }
+// };
+
+
+// ------------ video 25 ------------ 25 - Array.from() and Array.of()
+
+
+// //first method to convert array like objects to array, Array.from takes two arguments
+// //the firsts is the array like , second is a map fucntions which we can use to return anything
+// const elements = document.querySelectorAll('.people p');
+// const elementsArray=Array.from(elements,item=>{
+//     return item.textContent;
+// });
+// console.log(elementsArray);
+
+
+// //second method to convert array like objects to array to use map.
+// const element2=Array.from(document.querySelectorAll('.people p'));
+// const elementArray2=element2.map(item=>item.textContent);
+// console.log(elementArray2);
+
+// //we use Array.from to with arguments to convert them into array in order to use reduce method 
+// function sumAll(){
+//     const nums= Array.from(arguments);
+//     return nums.reduce((prev,next)=>prev+next,0);
+// }
+
+// const totalSum=sumAll(10,14,535,53);
+// console.log(totalSum); //614
+
+
+// //Array.of , takes any arguments and convert them into an array 
+// const numbers= Array.of(10,14,'hello','bye');
+// console.log(numbers); 
+
+
+
+
+
+// ------------ video 26 ------------ 26 - Array. find() and .findIndex()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
