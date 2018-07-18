@@ -533,4 +533,125 @@
 
 
 // ------------ video 19 ------------ 19 - Destructing Arrays
+ 
 
+// //desconstructing arrays into elements by index 
+// //if you choose only 2 indcies of the array, and you need to grad what is left 
+// // you can you the 'Rest operator ...' it convert them into a smaller array 
+
+
+// const team =['ahmed','ali','sarah','mahmoud','wes']
+// const [captin,assitant,...players]=team;
+
+// console.log(captin,assitant,players);
+
+
+// // if you want to de-consruct an strings perfectly splited with comma (,) 
+// //we can use .split(','), as it returns array of items.
+// const name ="ahmed,sayed,12,15,abc";
+
+// const [firstname, lastname, id,...data]=name.split(',');
+
+// console.log(firstname,lastname,id,data);
+
+
+
+
+// ------------ video 20 ------------ 20 - Swapping Variables with Destructuring
+
+
+// // you can swap varaibles by using array desconstruction, first you create any array of them
+// //second it's assigned to them
+// let inRing='Hulk';
+// let onSide='Rock';
+
+// console.log(inRing,onSide);
+// [inRing,onSide]=[onSide,inRing];
+// console.log(inRing,onSide);
+
+
+// ------------ video 21 ------------ 21 - Destructuring Functions - Multiple returns and named defaults
+
+
+// //when we have a fucntion and it returns an object, you can deconstruct to object 
+// //when the fucntion is being called.
+// const convertCurrency=(amount=300)=>{
+//     const converted={
+//         USD:amount*10,
+//         EPG:amount*0.5,
+//         EUR:amount*12,
+//     }
+//     return converted;
+// }
+
+// //an example of deconstruction on a function which returns an object 
+// const {USD:Dollar=200,EPG:Pound=20,EUR:Euro=250}=convertCurrency(200);
+// console.log(Dollar,Pound,Euro);
+
+
+// //we can used it with functions, the arguments to be send as an object 
+// //which allows to change to order,not pass down if it has a default value 
+// //but if you want to call with no arguments in the fuction it must also accept an empty object
+// // as follows, ({total=200,tax=0.13,tip=0.12}={} ) , here it accepts an empty object 
+
+// const totalBill=({total=200,tax=0.13,tip=0.12}={})=>{
+//     return total +(total*tax)+(tip*tax);
+// }
+
+// const bill=totalBill({total:200,tip:0.13,tax:0.14});
+
+// console.log(bill);
+
+
+
+// ------------ video 22 ------------ 22 - The for of Loop in Action
+
+
+// const cuts =['wes','bos','shank','shoti'];
+
+// //cuts > when looping over it with of it will print the value at the index,
+// //unlike for (in) it prints the index. thus, at watch we use cuts[cut] to get the value
+
+
+// //entries is the a method that hold array iterator,which hold the whole object [0,'wes'] , [1,'bos']
+// //thus as it converted to an elemets each is an array of 2 items 
+// for(const [i,cut] of cuts.entries()){
+//    console.log(`the index is ${i+1} and the value is ${cut}`);
+// }
+
+
+
+// //functions that adds any numbers of arguments using of looping 
+// function addNumbers(){
+//     let total=0;
+//     for( const number of arguments){
+//         total+=number;
+//     }
+//     console.log(total);
+//     return total;
+// }
+
+// const totalNumber=addNumbers(10,29,41,124);
+// console.log(totalNumber);
+
+
+// // looping over a name and print the chars using of loops
+// const name ='wesbos';
+// for(const char of name){
+//     console.log(char);
+// }
+
+
+
+// //adding an event listener to array of dom elements  using of loops
+// const p= document.querySelectorAll('p');
+// for(const para of p){
+//     para.addEventListener('click',function(){
+//         console.log(this.textContent);
+//     })
+// }
+
+
+
+
+// ------------ video 22 ------------ 22 - The for of loop
