@@ -604,10 +604,26 @@
 
 
 
-// ------------ video 22 ------------ 22 - The for of Loop in Action
+// ------------ video 22 ------------22 - The for of loop &  22 - The for of Loop in Action
 
+// //the power of looping with (of) is that you iterate over array and break at a certin element
+// //and aslo you can skip an item in the array, unline forEach you can't do that 
 
+// //if we added method to the array prototype Array.prototype.Shuffle,
+// //it will produce an errors in the array, you can follow the video if you wanna check the added method 
+
+// //the normal loops are not well used now because it's miss guide us (for let i=0;i<cuts.length;i++){}
+// // it's not prefered to use becasue to accees the value you need to write cuts[i] 
+
+// //the for(const cut in cuts ) {console.log(cuts[cut])}, it also need to write like this 
+// // so the best practise is to use for(const cut of cuts){console.log(cut)}
 // const cuts =['wes','bos','shank','shoti'];
+
+// for (const cut of cuts) {
+//     if (cut==='wes') continue;  //break; ends the loop, while continue skips one iteration
+//     console.log(cut);
+// } 
+
 
 // //cuts > when looping over it with of it will print the value at the index,
 // //unlike for (in) it prints the index. thus, at watch we use cuts[cut] to get the value
@@ -635,7 +651,7 @@
 // console.log(totalNumber);
 
 
-// // looping over a name and print the chars using of loops
+// // looping over a name and print the chars using (of) loops
 // const name ='wesbos';
 // for(const char of name){
 //     console.log(char);
@@ -643,7 +659,9 @@
 
 
 
-// //adding an event listener to array of dom elements  using of loops
+
+// //adding an event listener to array of dom elements  using (of) loops
+//it's like JQuery $("p").click(function(){}), but we used ES6
 // const p= document.querySelectorAll('p');
 // for(const para of p){
 //     para.addEventListener('click',function(){
@@ -655,3 +673,8 @@
 
 
 // ------------ video 22 ------------ 22 - The for of loop
+
+
+
+
+
