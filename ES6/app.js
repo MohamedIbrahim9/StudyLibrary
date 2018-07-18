@@ -391,7 +391,7 @@
 // //this is the fucntion that we explained earlier, we use .map or .forEach method to make iterations 
 // // it will return a backtext which contains html tags 
 // function highLight(strings, ...values) {
-//     // debugger;
+//     debugger;
 //     let str = '';
 //     // we need to use values[i] || '', because the number of strings is always bigger by one than values
 //     strings.map((items, i) => {
@@ -440,6 +440,7 @@
 //     })
     
 //     return strings.reduce((sentence, string, i) => {
+//         console.log(string);
 //         debugger;
 //         return `${sentence} ${string} ${abbrivated[i] ||''}`;
 //     },"")
@@ -456,3 +457,80 @@
 
 
 // ------------ video 16 ------------16 - Santizing User Data with Tagged Templates
+
+// // to prevent xss : which is running javascript code inside strings, we need to use 
+// //DomPurify.js which cleans the strings, it can be done as follows, 
+// //you can add the fucntion before the stings, or just before the const html
+// //or before assigning it inside the div element.
+
+
+// function sanitize(strings,...values){
+
+//   const dirty=  strings.reduce((sentence,string,i)=>{
+//         return `${sentence} ${string} ${values[i]||''}`
+//     },'')
+
+//     return DOMPurify.sanitize(dirty);
+// }
+// const name = 'ahmed';
+// //first location to use sanitize function
+// const bio=sanitize`<div onload="alert('hi')"></div>`;
+
+// //second location to use sanitize function
+// const Html=sanitize`
+//     <h2>${name}</h2>
+//     <div>${bio}</div>
+// `;
+
+// const div= document.querySelector('#div');
+// //third location to use sanitize function
+// div.innerHTML=sanitize`Html`;
+
+
+
+
+// ------------ video 17 ------------ 17 - New String Methods
+
+
+// //operations on strings 
+// // .startWith() , .endsWith() , .includes() , .repeat()
+// const name = 'AC-DC105213';
+
+
+// console.log(name.startsWith('A'));      //starts with 
+// console.log(name.startsWith('C1',4));   //escape 4 digits  from start
+// console.log(name.endsWith('3'));        //end with 
+// console.log(name.endsWith('D',4));      //escapes 4 digits from start
+// console.log(name.includes('DC'));       //search inside strings 
+// console.log(name.repeat(10));           //repeats strings with numbers
+
+
+
+
+// ------------ video 18 ------------ 18 - Destructuring Objects
+
+//desconstructing object is used to create variables nested inside object
+//easier way to write, also you can set a default value if it's equal undefined or not found 
+//you can also change its name as follow  const{facebook:fb="hi"} rename & default value.
+
+
+
+// const person= {
+//     name:'ahmed',
+//     social:{
+//         facebook:'www.facebook.com',
+//         twitter:'www.twitter.com',
+//         other:{
+//             instagram:'www.instagram.com',
+//             pinterest:'www.pinterest.com'
+//         }
+//     },
+//     credit:'123C'
+// };
+
+// const {twitter:tweet, facebook:fb,instagram:insta=300} = person.social;
+
+
+
+// ------------ video 19 ------------ 19 - Destructing Arrays
+
