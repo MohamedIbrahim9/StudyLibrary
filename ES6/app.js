@@ -695,7 +695,6 @@
 
 // //iterating over object with (of) looping we use Object.key(object) which returns an array with keys.
 // for (const iterator of Object.keys(apple)) {
-
 //     if(apple.hasOwnProperty(iterator)){
 //         const element=apple[iterator];
 //         console.log(element);
@@ -739,6 +738,115 @@
 
 
 // ------------ video 26 ------------ 26 - Array. find() and .findIndex()
+
+// const errorResponse= [
+//     {
+//       "status": "403",
+//       "source": { "pointer": "/data/attributes/secret-powers" },
+//       "detail": "Editing secret powers is not authorized on Sundays."
+//     },
+//     {
+//       "status": "422",
+//       "source": { "pointer": "/data/attributes/volume" },
+//       "detail": "Volume does not, in fact, go to 11."
+//     },
+//     {
+//       "status": "500",
+//       "source": { "pointer": "/data/attributes/reputation" },
+//       "title": "The backend responded with an error",
+//       "detail": "Reputation service not responding after three requests."
+//     }
+//   ];
+
+// //.find(), is a method which returns a call with one object filtered by the index we choose
+
+//   const statusCode='500';
+//   const errorStatus=errorResponse.find(error=>error.status===statusCode);
+//   console.log(errorStatus);
+
+
+//   //.filter(), is a method which returns a callback function with an array of elemnts 
+//   const errorStatusFilterdIndex= errorResponse.filter(error=>error.status===statusCode);
+//   console.log(errorStatusFilterdIndex);
+
+//   //findIndex(), is a method which returns a callback function with index of first object found
+//   const errorStatusIndex=errorResponse.findIndex(error=>error.status===statusCode);
+
+// console.log(errorStatusIndex)
+
+
+
+// ------------ video 27 ------------ 27 - Array .some() and .every() 
+
+// const ages =[10,15,16,29];
+
+// //.some() method accepts an array, and search for the specifc item, once it finds it,
+// //it returns a boolean.it can be used with strings or numbers, search for specfic element in an array
+// const AdultPrsent = ages.some(age=>age>=20);
+// console.log(AdultPrsent);
+
+
+// //.every() method accepts an array, search in the enitre array.it  returns a boolean 
+// const ages2= [20,25,61,53];
+// const AllAdults= ages2.every(age=>age>=10);
+
+
+// console.log(AllAdults);
+
+
+
+
+// ------------ video 28 ------------ 28 - Spread Operator Introduction
+
+
+// //if we want to join two array, we can use concat Method, which returns new array of the combined arrays
+// const vegPizza=["Deepdish",'Peperoni','Hawaiann'];
+// const meatPizza=['Meatzea','Spicy Mama','Margherita'];
+// const pizzazConcat=vegPizza.concat(meatPizza);
+
+// //we can use Array Spreading which disjoin each element of the array or a string, we can any elements 
+// //at any location in the fresh new array.
+
+// //P.s array is a refernce type is js, so becareful when you change the object, as all linked var will aslo change
+// const pizzazSpread=[...vegPizza,'NewDeapDish',...meatPizza]
+
+// console.log(pizzazConcat); // 6 element array 
+// console.log(pizzazSpread); //7 element array with new element in the middle 
+
+
+// ------------ video 29 ------------ 29 - Spread Exercise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
