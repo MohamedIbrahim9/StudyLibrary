@@ -9,3 +9,19 @@
     width: 100px;
     height: 100px;
 }
+
+.jump span{
+    margin: 20px;
+    padding: 8px 8px ;
+    color: black;
+    text-transform:uppercase;
+    text-shadow:  3px 3px 0 rgba(0,0,0,.15);
+    font-family: sans-serif;
+    display: inline-block;
+    transition: transform 0.4s;
+}
+.jump span:hover{
+    background-color: green;
+    transform: translateY(-20px)scale(2)rotate(10deg);
+    /* transform: translate3d(42px, -62px, -135px); */
+}

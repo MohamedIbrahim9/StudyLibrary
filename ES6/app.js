@@ -816,6 +816,23 @@
 
 // ------------ video 29 ------------ 29 - Spread Exercise
 
+// //in this examples we choosed an element from the dom, we wraped its text content 
+// //using spread to return span of each letter, we used css transorm to add animation.
+// const headingItem=document.querySelector('#h2');
+// const wrapElments=WrapWords(headingItem.textContent);
+// headingItem.innerHTML=wrapElments;
+
+// console.log(wrapElments);
+
+
+// function WrapWords(word) { 
+//     return [...word].map(letter=>`<span>${letter}</span>`).join('');
+//  }
+
+
+
+
+// ------------ video 30 ------------ 30 - More Spread Examples
 
 
 
@@ -827,9 +844,7 @@
 
 
 
-
-
-
+ 
 
 
 
