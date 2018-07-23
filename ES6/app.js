@@ -878,3 +878,34 @@
 
 
 // ------------ video 31 ------------ 31 - Spreading into a function
+
+// //if we hava an array, and we want to add another array to it, we can use .push() mehtod,
+// //but it will add them as an array. thus, we need to spread them into single element. so we use array spreading 
+// // this means we can spread arrays or strings into a method.
+// const names=['ahmed','ali','sayed'];
+// const names2=['mahmoud','Mohamed'];
+// names.push(...names2);
+// console.log(names);
+
+
+// //an example of mapping and template string, in action :D 
+// const fullNames=names.map(name=>{
+//     return `${name} el Safa7`;
+// });
+// console.log(fullNames);
+
+
+// //following the same concept, we have a method which accepts two arguments, we used array 
+// //spreading to make single elements of the array. instead of using personName[0], personName[1]
+// //array spreading solve that automatically.
+// const personName=['wes','bos'];
+// function sayHi(first,last){
+//     console.log(`the person's FirstName is : ${first} and lastName is :  ${last}`);
+// };
+// sayHi(...personName);
+
+
+// ------------ video 32 ------------ 32 - The ...rest param in Functions and destructuring
+
+
+
