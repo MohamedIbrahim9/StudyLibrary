@@ -438,7 +438,7 @@
 //         }
 //         return value;
 //     })
-    
+
 //     return strings.reduce((sentence, string, i) => {
 //         console.log(string);
 //         debugger;
@@ -533,7 +533,7 @@
 
 
 // ------------ video 19 ------------ 19 - Destructing Arrays
- 
+
 
 // //desconstructing arrays into elements by index 
 // //if you choose only 2 indcies of the array, and you need to grad what is left 
@@ -834,52 +834,47 @@
 
 // ------------ video 30 ------------ 30 - More Spread Examples
 
+// // if you an object, and you want to take an array out of it, we use array spreading 
+// //to unbox them to single elments.
+// const resturant = {
+//     name: 'Rosto',
+//     dishes: ['Shawrma', 'Krispy', 'Spiacy Chicken'],
+// }
+// const newResturantDishes = ['Spicy Shawrman', ...resturant.dishes];
+// console.log(newResturantDishes);
+
+
+// //if you want to get elements from he dom, and convert them to an array,
+// //we can use Array.From() method, but instead we can use array spreading to convert Nodelist 
+// //to an array, thus, we can access the map functionality.
+// const paragraphDiv = [...document.querySelectorAll('.people p')];
+
+// console.log(paragraphDiv);
+
+// console.log(paragraphDiv.map((map, i) => {
+//     return `The element says : ${map.textContent} and his number is ${i+1}`;
+// }));
+
+
+// //if we have an array of comments, and we want to delete a specefic item,
+// //we use findIndex() method to first get the id , then we used slice() method
+// //which takes two arguments the first and the start, but this will actually returns 
+// //an array of an array, thus we use array spreading to return single elements.
+
+
+// const comments = [{id: 101,text: 'hi, iam here1'},
+//                   {id: 102,text: 'hi, iam here2'},
+//                   {id: 103,text: 'hi, iam here3'},
+//                   {id: 104,text: 'hi, iam here4'},
+// ];
+
+// const commentCode=103;
+// const commentIndex=comments.findIndex(comment=>comment.id===commentCode);
+// console.log(commentIndex);
+
+// const newComments=[...comments.slice(0,commentIndex),...comments.slice(commentIndex+1)];
+// console.log(newComments);
 
 
 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ------------ video 31 ------------ 31 - Spreading into a function
