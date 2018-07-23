@@ -907,5 +907,70 @@
 
 // ------------ video 32 ------------ 32 - The ...rest param in Functions and destructuring
 
+// //convert the sent arguments with ...rest paramenters into an array 
+// function convertCurrency(rate,...amounts){
+//     console.log(rate,amounts);
+//     const total= amounts.map(amount=>amount*rate);
+//     return total.reduce((first,prev)=>first+prev,0);
+// }
+// const moneyConverted = convertCurrency(10,20,14,4,51)
+// console.log(moneyConverted);
+
+// //using rest parameters to attach the rest of the array elements into a single array.
+// const team = ['ahmed','ali','mahoud','showel'];
+// const [captin,assistant,...players]=team;
+// console.log(captin,assistant,players);
 
 
+
+
+// ------------ video 33 ------------ 33 - Object Literal Upgrades
+
+
+
+// const first = 'ahmed';
+// const last = 'ali';
+// const age = 15;
+
+
+// //object literals upgrades, if value is equal to key name, you can simply use the variable 
+// //or you can change it as requried. new method synatx, instead of typing hey: function(){}
+// //we just write hey(){};
+// const person = {
+//     firstName: first,
+//     last,
+//     age,
+//     social: {
+//         instagram: 'www.instagram.com',
+//     },
+//     //new method syntax 
+//     hey() {
+//         // debugger;
+//         console.log(`${this.firstName}`);
+//     }
+// };
+// person.hey();
+// console.log(person);
+
+
+// function convertColor(color) {
+//     return `${color}1f`;
+// }
+
+// const colorKey = 'pocketcolor';
+// const colorValue = '#fffddr';
+
+// //you can use [colorKey]; to access the value of an item and assign it to key value 
+// //or simply you can use the string templates to add to it. thus, in the value you can call 
+// //a function. 
+// const tShirt = {
+//     colorKey:colorV1alue, //colorkey:#fffddr
+//     [colorKey]: colorValue, //pocketcolor:#fffddr
+//     [`${colorKey}inverse`]: convertColor(colorValue), //pocketcolorinverse:#fffddr1f
+// };
+
+// console.log(tShirt);
+
+
+
+// ------------ video 34 ------------ 34 - Promises
