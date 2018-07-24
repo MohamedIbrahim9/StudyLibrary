@@ -974,3 +974,128 @@
 
 
 // ------------ video 34 ------------ 34 - Promises
+
+// //if you have an api, we can use fetch method the get the data, the operation on data can be done 
+// //only with .then() method, because until it done it's just a promised value 
+// //we use catch method, if all the .then() failed, catch will print the output.
+// const postPromises = 
+// fetch('https://jsonplaceholder.typicode.com/posts/')
+//   .then(response => response.json())
+//   .then(json =>{
+//     const data=json.find(value=>value.id===5);
+//     console.log(data);
+//   } )
+//   .catch(err=>{
+//       console.log(err);
+//   });
+
+// const promisedValue=fetch('https://jsonplaceholder.typicode.com/posts/1');
+// console.log(promisedValue);   //promise{<pending>} 
+
+
+// ------------ video 35  ------------ 35 - Building your own Promises
+
+// // we can build our own promise by creating new object, which accepts call back function
+// //which has two parameters, resolve, reject. we wrap the reject in Error to exactly determine 
+// //the error line.
+// const promise =new Promise((resovle,reject)=>{
+//   setTimeout(() => {
+//    resovle('sucess');
+//    reject(Error('Error'))
+//   }, 1000);
+// });
+
+// promise.then(data=>console.log(data))
+// .catch(err=>console.log(err));
+
+
+
+// ------------ video 36  ------------ 36 - Chaining Promises + Flow Control 
+
+
+// //this example to simulate the database behavior where you have post, you want to return
+// //he the user object, so we use promises.
+// const posts = [
+//   { title: 'I love JavaScript', author: 'Wes Bos', id: 1 },
+//   { title: 'CSS!', author: 'Chris Coyier', id: 2 },
+//   { title: 'Dev tools tricks', author: 'Addy Osmani', id: 3 },
+// ];
+
+// const authors = [
+//   { name: 'Wes Bos', twitter: '@wesbos', bio: 'Canadian Developer' },
+//   { name: 'Chris Coyier', twitter: '@chriscoyier', bio: 'CSS Tricks and CodePen' },
+//   { name: 'Addy Osmani', twitter: '@addyosmani', bio: 'Googler' },
+// ];
+
+// function getPost(id) {
+//   //make new promise 
+//   return new Promise((resolve, reject) => {
+//     //set time out to be like database 
+//     setTimeout(() => {
+//       const post = posts.find(post => post.id === id);
+//       //if found return post
+//       if (post) {
+//         resolve(post);
+//       }
+//       //else returns an error
+//       else {
+//         reject(Error('post Cannot be found'));
+//       }
+//     }, 1000);
+//   });
+// };
+
+// function hydratePost(post) {
+//   //new promise 
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const author = authors.find(author => author.name = post.author);
+//       //if found the author 
+//       if (author) {
+//         //set property post.author with an object author 
+//         post.author = author;
+//         //return the new post object
+//         resolve(post);
+//       } else {
+//         reject(Error('no user found'));
+//       }
+//     }, 1000);
+//   });
+// }
+
+// //calling the method  to find the post 
+// const foundPost=getPost(3).
+// then(post => {
+//   console.log(post);
+//   //here we returns a function which returns a promise too, so we can use .then()
+//   return hydratePost(post);
+// }).then(author => {
+//   console.log(author);
+// }).catch(err => console.log(err));
+
+
+
+// ------------ video 37  ------------ 37 - Working with Multiple Promises
+
+// //dealing with muliple promises, we use Promise.All(), which accepts an array or promises
+// //we return new Promise.all() to convert the data to json by using .map method
+// //followed by then method to log the data.
+
+// //promise.all waits for all the promise to return, it time measured by the longest request time 
+
+// const postPromises= fetch('https://jsonplaceholder.typicode.com/posts/');
+// const pagesPromises=fetch('https://jsonplaceholder.typicode.com/posts/');
+
+// Promise.all([postPromises,pagesPromises])
+// .then(responses=>{
+//   //we used another promsie because it returns a readable data, must be converted to json 
+//   //thus we used array.map method 
+//   return Promise.all(responses.map(response=>response.json()))
+// })
+//   .then(responses=>console.log(responses));
+
+
+
+
+ // ------------ video 38  ------------ 38 - Symbols
+ 
