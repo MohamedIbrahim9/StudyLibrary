@@ -1099,3 +1099,44 @@
 
  // ------------ video 38  ------------ 38 - Symbols
  
+//  //primtives in javascrip Number,String,Boolean,Null,undefined,object,symbol
+//  //symbols are unique values like GUID, the value inside is called discriptor.
+//  const wes = Symbol('wes');
+//  const person= Symbol('wes');
+
+// const classRoom={
+//     [Symbol('Mark')]:{id:1,name:'sayed'},
+//     [Symbol('Mark')]:{id:2,name:'mahmoud'},
+//     [Symbol('Mark')]:{id:3,name:'ali'},
+// };
+// console.log(classRoom);
+
+// //we can iterate over symbol. so this will not run, the other solution is to use the following 
+// // for (const key in classRoom) {
+// //     if (object.hasOwnProperty(key)) {
+// //         const element = object[key];
+// //         console.log(element);
+// //     }
+// // }   // can't use this 
+
+// //we use getOwnPropertyMethodSymbols to return an array of symbols, we can use map to return 
+// //classRoom[symbol], this is a workaround to access the object data when using symbols as keys 
+// const data = Object.getOwnPropertySymbols(classRoom);
+// const dataOfClass=data.map(symbol=>classRoom[symbol]);
+// console.log(dataOfClass);
+
+
+ // ------------ video 39  ------------ 39 - Code Quality with ESLint -44 - Only Allow ESLint Passing Code into your git repos
+
+//eslint session is very important with debugging, good for improving code quality 
+//skiped fro, 39 to 45 
+//to be watched later 
+
+
+ // ------------ video 45  ------------ 45 - JavaScript Modules and WebPack 2 Tooling Setup
+
+
+
+
+
+
